@@ -1,4 +1,4 @@
-"""Stephen's Qtile configuration file."""
+
 
 
 # -------------------------------------------
@@ -19,7 +19,7 @@ from libqtile.dgroups import simple_key_binder
 # -------------------------------------------
 mod = "mod4"
 my_terminal = "alacritty"
-my_browser = "brave"
+my_browser = "librewolf"
 my_file_manager = "pcmanfm"
 my_music_player = "ytmdesktop-bin"
 my_ide = "pyenv/bin/spyder"
@@ -284,19 +284,21 @@ def init_widgets_list():
                                    font="Ubuntu Mono",
                                    padding=0,
                                    fontsize=37),
-                    widget.BatteryIcon(
-                                        fontsize=14,
-                                        background=colors[6],
-                                        foreground=colors[1],
-                                        padding=5
-                                        step=5
-                                        fmt=" {}"),  
+                    widget.OpenWeather(fontsize=14,
+                                       metric=False,
+                                       background=colors[4],
+                                       foreground=colors[1],
+                                       #coordinates={"longitude": "REMOVED_FOR_PRIVACY",
+                                        #            "latitude": "REMOVED_FOR_PRIVACY"},
+                                       update_interval=60,
+                                       format=("{icon} {main_temp} "
+                                               "°{units_temperature}")),
                     widget.TextBox(text="",
+                                   background=colors[4],
+                                   foreground=colors[6],
                                    font="Ubuntu Mono",
-                                   background=colors[9],
-                                   foreground=colors[3],
                                    padding=0,
-                                   fontsize=37),                                 
+                                   fontsize=37),
                     widget.PulseVolume(fontsize=14,
                                        background=colors[6],
                                        foreground=colors[1],
