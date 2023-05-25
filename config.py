@@ -284,6 +284,19 @@ def init_widgets_list():
                                    font="Ubuntu Mono",
                                    padding=0,
                                    fontsize=37),
+                    widget.BatteryIcon(
+                                        fontsize=14,
+                                        background=colors[6],
+                                        foreground=colors[1],
+                                        padding=5
+                                        step=5
+                                        fmt=" {}"),  
+                    widget.TextBox(text="",
+                                   font="Ubuntu Mono",
+                                   background=colors[9],
+                                   foreground=colors[3],
+                                   padding=0,
+                                   fontsize=37),                                 
                     widget.PulseVolume(fontsize=14,
                                        background=colors[6],
                                        foreground=colors[1],
