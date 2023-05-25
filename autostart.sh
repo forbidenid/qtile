@@ -1,10 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-lxsession &
-nm-applet &
-picom --experimental-backends &
-nitrogen --restore &
-redshift &
-xinput set-prop 8 289 1
-xscreensaver &
-xautolock -time 60 -locker "systemctl suspend" &
+# systray battery icon
+cbatticon -u 5 &
+# systray volume
+volumeicon &
